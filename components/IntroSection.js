@@ -1,9 +1,11 @@
 import Carousel from "./Carousel";
 import NextSection from "./NextSection";
+import Image from "next/image";
 
 export default function IntroSection(props) {
+  const images = ['/images/nick_logo2_circle.png']
   return (
-    <div className="w-100 m-auto grid place-items-center">
+    <div className="w-100 m-auto grid place-items-center bottom-0">
       <div className="w-100 lg:w-3/4 inset-0 mx-auto my-10 grid grid-rows-2 place-items-center lg:grid-cols-2 lg:grid-rows-1">
         <div className="text-center text-2xl font-bold row-start-2 lg:text-3xl lg:text-left  lg:row-start-1">
           <ul>
@@ -21,10 +23,19 @@ export default function IntroSection(props) {
           </ul>
         </div>
         <div className="row-start-1 lg:col-start-2">
-          <Carousel />
+        <div className="max-w-screen-xl m-auto grid place-items-center">
+      <div className="items-center w-fit select-none md:w-max lg:mx-10">
+        <Image
+          src="/images/nick_logo2_circle.png"
+          height={400}
+          width={400}
+          alt="Nick Logo"
+        ></Image>
+      </div>
+    </div>
         </div>
       </div>
-      <NextSection text="About Me" pageNumber={1} />
+      
     </div>
   );
 }

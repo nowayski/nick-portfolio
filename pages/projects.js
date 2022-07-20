@@ -1,7 +1,18 @@
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import Head from "next/head";
+import ProjectItem from "../components/ProjectItem";
 
 export default function Projects() {
+  const gexImages = [
+    "/images/projects/gex-search-circle.png",
+    "/images/projects/graph-circle.png",
+  ];
+  const portfolioImages = [
+    "/images/projects/portfolio-circle.png",
+    "/images/projects/portfolio-mobile-circle.png",
+    "/images/projects/portfolio-skills-circle.png",
+  ];
   return (
     <div>
       <Head>
@@ -10,6 +21,29 @@ export default function Projects() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+
+      <div className="my-10">
+        <h1 className="my-5 text-center text-4xl font-bold  lg:text-4xl">
+          My Projects
+        </h1>
+      </div>
+      <div className="flex flex-col place-items-center gap-0">
+        <div className="flex flex-row">
+          <ProjectItem
+            imageList={gexImages}
+            title="Runescape 3 Grand Exchange Search"
+            linkURL="https://gex-search.herokuapp.com/"
+          />
+        </div>
+        <div className="flex flex-row">
+          <ProjectItem
+            imageList={portfolioImages}
+            title="My custom Portfolio Website"
+            linkURL="http://localhost:3000/"
+          />
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 }

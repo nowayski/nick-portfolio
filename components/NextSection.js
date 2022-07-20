@@ -1,13 +1,15 @@
 import Image from "next/image";
+import React, { useRef } from "react";
 
 export default function NextSection(props) {
   function goToHandler() {
-    const height = window.innerHeight * props.pageNumber + 100;
-    window.scrollTo({ top: height, left: 0, behavior: "smooth" });
+    props.scrollRef.current.scrollIntoView({ behavior: "smooth" });
+    // const height = window.innerHeight * props.pageNumber + 150;
+    // window.scrollTo({ top: height, left: 0, behavior: "smooth" });
   }
 
   return (
-    <div className="invisible absolute inset-x-0 bottom-0 lg:visible text-center  animate-bounce">
+    <div className="invisible inset-x-0 bottom-0 lg:visible text-center  animate-bounce">
       <button>
         <a onClick={goToHandler} className="text-2xl">
           {props.text}

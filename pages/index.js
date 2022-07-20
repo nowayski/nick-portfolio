@@ -2,10 +2,17 @@ import Head from "next/head";
 import Header from "../components/Header";
 import IntroSection from "../components/IntroSection";
 import Image from "next/image";
-import Carousel from "../components/Carousel";
 import NextSection from "../components/NextSection";
+import ImageListItem from "../components/ImageListItem";
+import Link from "next/link";
+import Footer from "../components/Footer";
+import React, { useRef } from "react";
 
 export default function Home() {
+  const skillRef = useRef(null);
+  const aboutMeRef = useRef(null);
+  const socialRef = useRef(null);
+
   return (
     <div>
       <Head>
@@ -14,20 +21,26 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section className="h-max lg:h-screen">
+      <section className="h-max lg:h-full">
         <Header />
         <IntroSection />
       </section>
+      <NextSection text="About Me" scrollRef={aboutMeRef} />
 
-      <hr className="block divide-solid outline-8 m-8"></hr>
+      <hr ref={aboutMeRef} className="block divide-solid outline-8 m-8"></hr>
 
       <section
         id="aboutme"
-        className=" relative lg:h-screen w-5/6 mx-auto mb-20 flex items-center"
+        className=" relative lg:h-full w-5/6 mx-auto mb-20 flex items-center"
       >
-        <div className="lg:grid lg:grid-rows-1 lg:grid-cols-2 lg:place-items-center lg:object-center lg:gap-5">
+        <div className="lg:grid lg:grid-rows-1 lg:grid-cols-2 lg:place-items-center lg:object-center lg:gap-5 lg:my-20">
           <div>
-            <Carousel />
+            <Image
+              src="/images/nickprofile2.png"
+              height={400}
+              width={400}
+              alt="Nicholas playing a board game"
+            ></Image>
           </div>
           <div>
             <h1 className="my-5 text-left text-2xl font-bold  lg:text-4xl">
@@ -80,83 +93,153 @@ export default function Home() {
               home..
             </p>
           </div>
-          <NextSection text="My Qualifications and Skills" pageNumber={2} />
         </div>
       </section>
 
-      <hr className="divide-solid outline-8"></hr>
+      <NextSection text="My Qualifications and Skills" scrollRef={skillRef} />
+      <hr className="divide-solid outline-8" ref={skillRef}></hr>
 
-      <section id="skills" className="lg:h-screen mt-10 w-3/4 mx-auto">
-        <h1 className="text-center text-left text-2xl font-bold lg:text-4xl mb-20">
+      <section id="skills" className="relative lg:h-full mt-10 w-3/4 mx-auto">
+        <h1 className="text-center text-left text-2xl font-bold lg:text-3xl mb-2">
           I specialise in frontend web development.
         </h1>
-        <div className="bg-zinc-100 mb-20">
-          <div className="flex flex-wrap place-items-center text-center lg:grid lg:gap-5 lg:grid-cols-5 lg:grid-rows-1 mb-5">
-            <div className="w-1/2">
-              <p className="p-3 text-lg font-bold">HTML</p>
-              <Image
-                src="/images/html.png"
-                width={100}
-                height={100}
-                alt="HTML Symbol"
-              ></Image>
-            </div>
-            <div className="w-1/2">
-              <p className="p-3 text-lg font-bold">CSS</p>{" "}
-              <Image
-                src="/images/css.png"
-                width={100}
-                height={100}
-                alt="HTML Symbol"
-              ></Image>
-            </div>
-            <div className="w-1/2">
-              <p className="p-3 text-lg font-bold">Javascript (ES6)</p>{" "}
-              <Image
-                src="/images/javascript.png"
-                width={100}
-                height={100}
-                alt="HTML Symbol"
-              ></Image>
-            </div>
-            <div className="w-1/2">
-              <p className="p-3 text-lg font-bold">React</p>{" "}
-              <Image
-                src="/images/react.png"
-                width={100}
-                height={100}
-                alt="HTML Symbol"
-              ></Image>
-            </div>
-            <div className="w-full">
-              <p className="p-3 text-lg font-bold">Next.js</p>
-              <Image
-                src="/images/nextjs.png"
-                width={100}
-                height={100}
-                alt="HTML Symbol"
-              ></Image>
+        <div className="bg-zinc-100 mb-10 h-1/3 rounded-full">
+          <div className="flex flex-wrap place-items-center text-center lg:grid lg:gap-1 lg:grid-cols-5 lg:grid-rows-1 mb-2 py-12">
+            <ImageListItem
+              title="HTML"
+              source="/images/html.png"
+              altText="HTML logo"
+            />
+            <ImageListItem
+              title="CSS"
+              source="/images/css.png"
+              altText="CSS logo"
+            />
+            <ImageListItem
+              title="Javascript (ES6)"
+              source="/images/javascript.png"
+              altText="Javascript logo"
+            />
+            <ImageListItem
+              title="React"
+              source="/images/react.png"
+              altText="React logo"
+            />{" "}
+            <ImageListItem
+              title="Next.js"
+              source="/images/nextjs.png"
+              altText="HTML logo"
+            />
+          </div>
+        </div>
+        <div>
+          <h1 className="text-center text-left text-2xl font-bold lg:text-3xl mb-2">
+            I also have other experience.
+          </h1>
+          <div className="bg-zinc-100 mb-10 h-1/3 rounded-full">
+            <div className="flex flex-wrap place-items-center text-center lg:grid lg:gap-5 lg:grid-cols-4 lg:grid-rows-1 mb-5 py-12">
+              <ImageListItem
+                title="Node JS"
+                source="/images/nodejs-2.svg"
+                altText="NodeJS logo"
+              />
+              <ImageListItem
+                title="Tailwind CSS"
+                source="/images/tailwind.png"
+                altText="Tailwind css logo"
+              />
+              <ImageListItem
+                title="Python"
+                source="/images/python.png"
+                altText="python logo"
+              />
+              <ImageListItem
+                title="Java"
+                source="/images/java.png"
+                altText="Java logo"
+              />
             </div>
           </div>
         </div>
         <div>
-          <h1 className="text-center text-left text-2xl font-bold lg:text-4xl">
-            I also have other experience.
+          <h1 className="text-center text-xl font-bold lg:text-2xl  py-5 mb-5">
+            I also have a B.Sc in Computer Science, as well as a TOPIK (Korean
+            Proficiency) level 5.
           </h1>
         </div>
       </section>
+      <NextSection text="Final page I promise." scrollRef={socialRef} />
 
-      {/* <div className="h-32 w-32">
-        <footer className="absolute inset-x-0 bottom-0 h-16">
-          <div className="text-gray-700 text-center p-4 bg-gray-300">
-            Nicholas Lane - 2022
-            Hobby Icons <a href="https://www.flaticon.com/free-icons/korean" title="korean icons">by Freepik - Flaticon</a>
-            Skill Icons by <a href="https://freeicons.io/profile/3">icon king1</a> on <a href="https://freeicons.io">freeicons.io</a>
+      <hr className="divide-solid outline-8 my-10"></hr>
 
-                                
+      <section
+        id="callToAction"
+        ref={socialRef}
+        className="relative lg:h-screen mt-10 w-3/4 mx-auto"
+      >
+        <div className="grid grid-cols-1 grid-rows-3 mb-20 lg:grid-cols-4 lg:grid-rows-1 place-items-center gap-10 lg:gap-0 lg:h-2/5">
+          <div className="my-5 lg:col-start-1 lg:col-end-3">
+            <h1 className="text-center text-left text-2xl font-bold lg:text-3xl">
+              I am currently open for work.
+            </h1>
           </div>
-        </footer>
-      </div> */}
+          <div className="lg:col-start-3">
+            <button className="px-10 py-7 text-2xl font-bold bg-amber-300 w-500 h-500 rounded-full hover:bg-black hover:text-white">
+              My Projects
+            </button>
+          </div>
+          <div className="">
+            <button className="px-10 py-7 text-2xl font-bold text-white bg-black rounded-full hover:bg-amber-300 hover:text-black">
+              Contact Me
+            </button>
+          </div>
+        </div>
+        <h1 className="text-center text-left text-2xl font-bold lg:text-3xl py-5 my-9">
+          Or contact me on social media:
+        </h1>
+        <div className="grid grid-cols-1 grid-rows-3 lg:grid-cols-3 lg:grid-rows-1 place-items-center gap-5 mb-10">
+          <div className="m-2">
+            <Link href="https://twitter.com/Nick_JLane">
+              <a className="text-xl">
+                <Image
+                  src="/images/twitter.png"
+                  width={80}
+                  height={80}
+                  alt="Twitter logo"
+                ></Image>
+              </a>
+            </Link>
+          </div>
+          <div className="m-2">
+            <Link href="https://www.linkedin.com/in/nicholas-lane92/">
+              <a className="text-xl">
+                {" "}
+                <Image
+                  src="/images/linkedin.png"
+                  width={80}
+                  height={80}
+                  alt="Linkedin logo"
+                ></Image>
+              </a>
+            </Link>
+          </div>
+          <div className="m-2">
+            <Link href="https://dev.to/nicklane">
+              <a className="text-xl">
+                {" "}
+                <Image
+                  src="/images/dev.png"
+                  width={80}
+                  height={80}
+                  alt="dev.to logo"
+                ></Image>
+              </a>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 }
