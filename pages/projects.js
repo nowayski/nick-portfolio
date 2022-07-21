@@ -4,6 +4,18 @@ import Head from "next/head";
 import ProjectItem from "../components/ProjectItem";
 
 export default function Projects() {
+  const gexDesc = [
+    "This project was created using React js with vanilla css with a node express backend.",
+    "The purpose was to consume a simple API, to display price history for runescape 3 in game auction house.",
+    "I achieved this by receving JSON files from the API and dynamically displaying them in expanded divs using the recharts library.",
+  ];
+
+  const portDesc = [
+    "This project was created using Next js with Tailwind css.",
+    "The purpose was to display information about myself, my projects and parse my blogs using a markdown parser.",
+    "I hoped to achieve this using next's dynamic routing, static generation and various build in components to make the website faster.",
+  ];
+
   const gexImages = [
     "/images/projects/gex-search-circle.png",
     "/images/projects/graph-circle.png",
@@ -21,9 +33,9 @@ export default function Projects() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-
-      <div className="my-10">
-        <h1 className="my-5 text-center text-4xl font-bold  lg:text-4xl">
+      
+      <div className="">
+        <h1 className="mt-10 text-center text-4xl font-bold  lg:text-4xl">
           My Projects
         </h1>
       </div>
@@ -33,13 +45,16 @@ export default function Projects() {
             imageList={gexImages}
             title="Runescape 3 Grand Exchange Search"
             linkURL="https://gex-search.herokuapp.com/"
+            description={gexDesc}
           />
         </div>
+
         <div className="flex flex-row">
           <ProjectItem
             imageList={portfolioImages}
             title="My custom Portfolio Website"
             linkURL="http://localhost:3000/"
+            description={portDesc}
           />
         </div>
       </div>

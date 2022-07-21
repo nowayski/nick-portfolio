@@ -31,9 +31,9 @@ export default function Home() {
 
       <section
         id="aboutme"
-        className=" relative lg:h-full w-5/6 mx-auto mb-20 flex items-center"
+        className=" relative w-5/6 mx-auto mb-20 flex items-center"
       >
-        <div className="lg:grid lg:grid-rows-1 lg:grid-cols-2 lg:place-items-center lg:object-center lg:gap-5 lg:my-20">
+        <div className="lg:grid lg:grid-rows-1 lg:grid-cols-2 lg:place-items-center lg:object-center lg:gap-5 lg:my-10">
           <div>
             <Image
               src="/images/nickprofile2.png"
@@ -100,11 +100,11 @@ export default function Home() {
       <hr className="divide-solid outline-8" ref={skillRef}></hr>
 
       <section id="skills" className="relative lg:h-full mt-10 w-3/4 mx-auto">
-        <h1 className="text-center text-left text-2xl font-bold lg:text-3xl mb-2">
+        <h1 className="text-center text-left text-2xl font-bold lg:text-3xl mb-5">
           I specialise in frontend web development.
         </h1>
-        <div className="bg-zinc-100 mb-10 h-1/3 rounded-full">
-          <div className="flex flex-wrap place-items-center text-center lg:grid lg:gap-1 lg:grid-cols-5 lg:grid-rows-1 mb-2 py-12">
+        <div className="bg-zinc-100 mb-10 h-1/3 lg:h-1/4 rounded-full">
+          <div className="flex flex-wrap place-items-center text-center lg:grid lg:gap-1 lg:grid-cols-5 lg:grid-rows-1 mb-2 py-12 lg:py-2">
             <ImageListItem
               title="HTML"
               source="/images/html.png"
@@ -136,8 +136,8 @@ export default function Home() {
           <h1 className="text-center text-left text-2xl font-bold lg:text-3xl mb-2">
             I also have other experience.
           </h1>
-          <div className="bg-zinc-100 mb-10 h-1/3 rounded-full">
-            <div className="flex flex-wrap place-items-center text-center lg:grid lg:gap-5 lg:grid-cols-4 lg:grid-rows-1 mb-5 py-12">
+          <div className="bg-zinc-100 mb-10 h-1/3 lg:h-1/4 rounded-full">
+            <div className="flex flex-wrap place-items-center text-center lg:grid lg:gap-5 lg:grid-cols-4 lg:grid-rows-1 mb-5 py-12 lg:py-2">
               <ImageListItem
                 title="Node JS"
                 source="/images/nodejs-2.svg"
@@ -162,7 +162,7 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <h1 className="text-center text-xl font-bold lg:text-2xl  py-5 mb-5">
+          <h1 className="text-center text-xl font-bold lg:text-2xl  py-5 mb-10">
             I also have a B.Sc in Computer Science, as well as a TOPIK (Korean
             Proficiency) level 5.
           </h1>
@@ -177,7 +177,7 @@ export default function Home() {
         ref={socialRef}
         className="relative lg:h-screen mt-10 w-3/4 mx-auto"
       >
-        <div className="grid grid-cols-1 grid-rows-3 mb-20 lg:grid-cols-4 lg:grid-rows-1 place-items-center gap-10 lg:gap-0 lg:h-2/5">
+        <div className="grid grid-cols-1 grid-rows-3 lg:grid-cols-4 lg:grid-rows-1 place-items-center gap-10 lg:gap-0 lg:h-2/5">
           <div className="my-5 lg:col-start-1 lg:col-end-3">
             <h1 className="text-center text-left text-2xl font-bold lg:text-3xl">
               I am currently open for work.
@@ -197,7 +197,7 @@ export default function Home() {
         <h1 className="text-center text-left text-2xl font-bold lg:text-3xl py-5 my-9">
           Or contact me on social media:
         </h1>
-        <div className="grid grid-cols-1 grid-rows-3 lg:grid-cols-3 lg:grid-rows-1 place-items-center gap-5 mb-10">
+        <div className="grid grid-cols-1 grid-rows-3 lg:grid-cols-3 lg:grid-rows-1 place-items-center gap-5">
           <div className="m-2">
             <Link href="https://twitter.com/Nick_JLane">
               <a className="text-xl">
