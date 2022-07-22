@@ -35,7 +35,9 @@ export default function Blogs({ allPostsData }) {
           {allPostsData.map(({ id, date, title }) => (
             <li className="my-10" key={id}>
               <Link href={`/posts/${id}`}>
-                <a className="text-sky-600 text-lg text-center font-bold lg:text-2xl hover:text-amber-300 underline">{title}</a>
+                <a className="text-sky-600 text-lg text-center font-bold lg:text-2xl hover:text-amber-300 underline">
+                  {title}
+                </a>
               </Link>
               <br />
               {id}

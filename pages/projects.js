@@ -53,7 +53,7 @@ export default function Projects() {
           <ProjectItem
             imageList={portfolioImages}
             title="My custom Portfolio Website"
-            linkURL="http://localhost:3000/"
+            linkURL="http://www.nicholasjlane.com/"
             description={portDesc}
           />
         </div>

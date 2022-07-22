@@ -1,6 +1,5 @@
 export default function handler(req, res) {
   let nodemailer = require("nodemailer");
-  require("dotenv").config();
   const password = process.env.password;
   const dummyEmail = process.env.dummyEmail;
   const realEmail = process.env.realEmail;
