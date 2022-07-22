@@ -40,7 +40,7 @@ export default function Projects() {
         </h1>
       </div>
       <div className="flex flex-col place-items-center gap-0">
-        <div className="flex flex-row">
+        <div className="flex flex-row w-3/4">
           <ProjectItem
             imageList={gexImages}
             title="Runescape 3 Grand Exchange Search"
@@ -49,7 +49,7 @@ export default function Projects() {
           />
         </div>
 
-        <div className="flex flex-row">
+        <div className="flex flex-row w-3/4">
           <ProjectItem
             imageList={portfolioImages}
             title="My custom Portfolio Website"

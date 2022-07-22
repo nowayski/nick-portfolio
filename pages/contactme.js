@@ -9,35 +9,72 @@ export default function ContactMe() {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    let data = {
-      fullname,
-      email,
-      subject,
-      message,
-    };
+    let isValid = handleValidation();
 
-    fetch("api/contact", {
-      method: "POST",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    }).then((res) => {
-      console.log("response received");
-      if (res.status === 200) {
-        console.log('Response succeeded!')
-        setSubmitted(true);
-        setFullname("");
-        setMessage("");
-        setSubject("");
-        setEmail("");
-      }
-    });
+    if (isValid) {
+      let data = {
+        fullname,
+        email,
+        subject,
+        message,
+      };
+
+      fetch("api/contact", {
+        method: "POST",
+        headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }).then((res) => {
+        console.log("RESPONSE RECEIVED");
+        if (res.status === 200) {
+          console.log("Response succeeded!");
+          setSubmitted(true);
+          setSuccessMessage("The message send was a success.");
+          setFullname("");
+          setMessage("");
+          setSubject("");
+          setEmail("");
+        } else {
+          console.log(error);
+          setSuccessMessage("The message send was a failure.");
+          return;
+        }
+      });
+    }
+  };
+
+  const handleValidation = () => {
+    let tempErrors = {};
+    let isValid = true;
+    if (fullname.length <= 0) {
+      tempErrors["fullname"] = true;
+      isValid = false;
+    }
+    if (email.length <= 0) {
+      tempErrors["email"] = true;
+      isValid = false;
+    }
+    if (message.length <= 0) {
+      tempErrors["message"] = true;
+      isValid = false;
+    }
+    if (subject.length <= 0) {
+      tempErrors["subject"] = true;
+      isValid = false;
+    }
+
+    setErrors({ ...tempErrors });
+    console.log("Errors: ", errors);
+    console.log(isValid);
+    return isValid;
   };
 
   return (
@@ -51,7 +88,7 @@ export default function ContactMe() {
 
       <form
         onSubmit={handleSubmit}
-        className="rounded-lg flex flex-col px-8 py-8 my-10 shadow-xl w-3/4 lg:w-1/2 m-auto bg-slate-100"
+        className="rounded-lg flex flex-col px-8 py-8 my-10 shadow-xl w-3/4 max-w- lg:w-1/2 m-auto bg-slate-100"
       >
         <h1 className="text-2xl font-bold ">Send a message</h1>
 
@@ -67,7 +104,9 @@ export default function ContactMe() {
           name="fullname"
           className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 text-gray-500 mb-4"
         />
-
+        <p className="text-red-500">
+          {errors.fullname ? "This is a required field." : null}
+        </p>
         <label htmlFor="email" className="text-gray-500 font-light">
           E-mail<span className="text-red-500">*</span>
         </label>
@@ -80,6 +119,9 @@ export default function ContactMe() {
           }}
           className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500  text-gray-500"
         />
+        <p className="text-red-500">
+          {errors.email ? "This is a required field." : null}
+        </p>
 
         <label htmlFor="subject" className="text-gray-500 mt-4">
           Subject<span className="text-red-500">*</span>
@@ -93,7 +135,9 @@ export default function ContactMe() {
           }}
           className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 text-gray-500"
         />
-
+        <p className="text-red-500">
+          {errors.subject ? "This is a required field." : null}
+        </p>
         <label htmlFor="message" className="text-gray-500 mt-4">
           Message<span className="text-red-500">*</span>
         </label>
@@ -105,6 +149,9 @@ export default function ContactMe() {
           }}
           className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
         ></textarea>
+        <p className="text-red-500">
+          {errors.message ? "This is a required field." : null}
+        </p>
 
         <div className="flex flex-row items-center place-content-center mb-20">
           <button
@@ -114,6 +161,15 @@ export default function ContactMe() {
             Submit
           </button>
         </div>
+        <p
+          className={
+            successMessage?.includes("success")
+              ? "text-green-500 m-auto"
+              : "text-red-500 m-auto"
+          }
+        >
+          {submitted ? successMessage : ""}
+        </p>
       </form>
 
       <Footer />
