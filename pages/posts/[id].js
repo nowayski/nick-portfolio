@@ -35,6 +35,7 @@ export default function Post({ postData }) {
           width={100}
           height={100}
           alt="blog icon"
+          priority={true}
         ></Image>
       </div>
       <div className="prose my-5 w-4/5 text-left text-lg m-auto lg:grid lg:place-items-center">

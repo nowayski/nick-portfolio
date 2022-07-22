@@ -26,6 +26,7 @@ export default function Carousel(props) {
           height={300}
           width={300}
           alt="Nick Logo"
+          priority={true}
         ></Image>
       </div>
     </div>

@@ -35,6 +35,7 @@ export default function IntroSection(props) {
                 height={400}
                 width={400}
                 alt="Nick Logo"
+                priority={true}
               ></Image>
             </div>
           </div>

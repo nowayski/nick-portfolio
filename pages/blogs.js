@@ -30,6 +30,7 @@ export default function Blogs({ allPostsData }) {
           width={100}
           height={100}
           alt="blog icon"
+          priority={true}
         ></Image>
         <ul className="mb-10 font-semibold">
           {allPostsData.map(({ id, date, title }) => (

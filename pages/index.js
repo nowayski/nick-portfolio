@@ -43,6 +43,7 @@ export default function Home() {
               height={400}
               width={400}
               alt="Nicholas playing a board game"
+              priority={true}
             ></Image>
           </div>
           <div>
@@ -68,6 +69,7 @@ export default function Home() {
                   width={100}
                   height={100}
                   alt="gaming pc"
+                  priority={true}
                 ></Image>{" "}
               </div>
               <div>
@@ -77,6 +79,7 @@ export default function Home() {
                   width={100}
                   height={100}
                   alt="hangul text"
+                  priority={true}
                 ></Image>{" "}
               </div>
               <div>
@@ -86,6 +89,7 @@ export default function Home() {
                   width={100}
                   height={100}
                   alt="bowl of food"
+                  priority={true}
                 ></Image>
               </div>
             </div>
@@ -112,26 +116,31 @@ export default function Home() {
               title="HTML"
               source="/images/html.png"
               altText="HTML logo"
+              priority={true}
             />
             <ImageListItem
               title="CSS"
               source="/images/css.png"
               altText="CSS logo"
+              priority={true}
             />
             <ImageListItem
               title="Javascript (ES6)"
               source="/images/javascript.png"
               altText="Javascript logo"
+              priority={true}
             />
             <ImageListItem
               title="React"
               source="/images/react.png"
               altText="React logo"
+              priority={true}
             />{" "}
             <ImageListItem
               title="Next.js"
               source="/images/nextjs.png"
               altText="HTML logo"
+              priority={true}
             />
           </div>
         </div>
@@ -145,21 +154,25 @@ export default function Home() {
                 title="Node JS"
                 source="/images/nodejs-2.svg"
                 altText="NodeJS logo"
+                priority={true}
               />
               <ImageListItem
                 title="Tailwind CSS"
                 source="/images/tailwind.png"
                 altText="Tailwind css logo"
+                priority={true}
               />
               <ImageListItem
                 title="Python"
                 source="/images/python.png"
                 altText="python logo"
+                priority={true}
               />
               <ImageListItem
                 title="Java"
                 source="/images/java.png"
                 altText="Java logo"
+                priority={true}
               />
             </div>
           </div>
@@ -213,6 +226,7 @@ export default function Home() {
                   width={80}
                   height={80}
                   alt="Twitter logo"
+                  priority={true}
                 ></Image>
               </a>
             </Link>
@@ -226,6 +240,7 @@ export default function Home() {
                   width={80}
                   height={80}
                   alt="Linkedin logo"
+                  priority={true}
                 ></Image>
               </a>
             </Link>
@@ -239,6 +254,7 @@ export default function Home() {
                   width={80}
                   height={80}
                   alt="dev.to logo"
+                  priority={true}
                 ></Image>
               </a>
             </Link>
