@@ -44,10 +44,10 @@ export default function Home() {
           </div>
           <div>
             <h1 className="my-5 text-left text-2xl font-bold  lg:text-4xl">
-              My name is Nick and I'm a British software developer.
+              My name is Nick and I am a British software developer.
             </h1>
             <p className="text-left text-md text-lg font-bold text-zinc-600 my-5">
-              Since I started learning web development, I've been through so
+              Since I started learning web development, I have been through so
               many steps to find the things I like. It turns out, those things
               are creating functional, responsive web pages and trying to create
               good looking designs to go along with it.
