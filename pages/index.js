@@ -99,7 +99,7 @@ export default function Home() {
 
             <br />
             <p className="pt-5 lg:my-10 text-lg font-bold">
-              But most importantly, I am easy to work with and care about building you good sites.
+              But most importantly, I am easy to work with and care about building high quality websites.
             </p>
           </div>
         </div>
