@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <header>
-      <div className="grid grid-rows-2 grid-cols-4 w-5/6  mx-auto p-3 h-10 lg:h-20 lg:grid-cols-5 gap-0 m-10 place-item-center z-10">
+      <div className="grid grid-rows-2 grid-cols-4 w-5/6 mx-auto p-3 h-10 lg:h-20 lg:grid-cols-5 gap-0 m-10 place-item-center z-10">
         <div className="col-span-3 rows-span-1 lg:col-span-2">
           <h1 className="text-2xl font-bold">Nicholas Lane </h1>
         </div>

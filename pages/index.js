@@ -29,22 +29,22 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section ref={startRef} className="h-max lg:h-full">
+      <section ref={startRef} className=" lg:h-full">
         <Header />
         <IntroSection />
       </section>
       <NextSection text="About Me" scrollRef={aboutMeRef} />
 
-      <hr ref={aboutMeRef} className="block divide-solid outline-8 m-8"></hr>
+      <hr ref={aboutMeRef} className="block divide-solid outline-8 lg:m-8"></hr>
 
       <section
         id="aboutme"
-        className=" relative w-5/6 mx-auto mb-20 flex items-center"
+        className=" relative w-5/6 mx-auto lg:mb-20 flex items-center"
       >
         <div className="lg:grid lg:grid-rows-1 lg:grid-cols-2 lg:place-items-center lg:object-center lg:gap-5 lg:my-10">
           <div>
             <Image
-              src="/images/nickprofile2.png"
+              src="/images/nick_logo2_circle.png"
               height={400}
               width={400}
               alt="Nicholas playing a board game"
@@ -52,14 +52,12 @@ export default function Home() {
             ></Image>
           </div>
           <div>
-            <h1 className="my-5 text-left text-2xl font-bold  lg:text-4xl">
-              My name is Nick and I am a British software developer.
+            <h1 className="my-5 text-left text-2xl font-bold  lg:text-4xl lg:my-10">
+              My name is Nick and I am a UK based software developer.
             </h1>
-            <p className="text-left text-md text-lg font-bold text-zinc-600 my-5">
-              Since I started learning web development, I have been through so
-              many steps to find the things I like. It turns out, those things
-              are creating functional, responsive web pages and trying to create
-              good looking designs to go along with it.
+            <p className="text-left text-md text-lg font-bold text-zinc-600 my-5 lg:text-xl lg:my-10 lg:py-5">
+              I use my Web Development skills to create good looking, functional
+              and responsive web pages.
             </p>
             <br />
             <p className="text-lg font-bold text-center lg:text-left">
@@ -100,9 +98,8 @@ export default function Home() {
             </div>
 
             <br />
-            <p className="pt-5 text-lg font-bold">
-              Now that I am older, I am looking for opportunities closer to
-              home..
+            <p className="pt-5 lg:my-10 text-lg font-bold">
+              But most importantly, I am easy to work with and care about building you good sites.
             </p>
           </div>
         </div>
@@ -115,7 +112,7 @@ export default function Home() {
         <h1 className="text-center text-left text-2xl font-bold lg:text-3xl mb-5">
           I specialise in frontend web development.
         </h1>
-        <div className="bg-zinc-100 mb-10 h-1/3 lg:h-1/4 rounded-full">
+        <div className="bg-zinc-100 mb-20 h-1/3 lg:h-1/4 rounded-lg lg:rounded-full">
           <div className="flex flex-wrap place-items-center text-center lg:grid lg:gap-1 lg:grid-cols-5 lg:grid-rows-1 mb-2 py-12 lg:py-2">
             <ImageListItem
               title="HTML"
@@ -151,20 +148,20 @@ export default function Home() {
         </div>
         <div>
           <h1 className="text-center text-left text-2xl font-bold lg:text-3xl mb-2">
-            I also have other experience.
+            My other experience.
           </h1>
-          <div className="bg-zinc-100 mb-10 h-1/3 lg:h-1/4 rounded-full">
-            <div className="flex flex-wrap place-items-center text-center lg:grid lg:gap-5 lg:grid-cols-4 lg:grid-rows-1 mb-5 py-12 lg:py-2">
-              <ImageListItem
-                title="Node JS"
-                source="/images/nodejs-2.svg"
-                altText="NodeJS logo"
-                priority={true}
-              />
+          <div className="bg-zinc-100 mb-10 h-1/3 lg:h-1/4 rounded-lg lg:rounded-full">
+            <div className="flex flex-wrap place-items-center text-center lg:grid lg:gap-5 lg:grid-cols-4 lg:grid-rows-1 mb-5 p-6 lg:py-2">
               <ImageListItem
                 title="Tailwind CSS"
                 source="/images/tailwind.png"
                 altText="Tailwind css logo"
+                priority={true}
+              />
+              <ImageListItem
+                title="Node JS"
+                source="/images/nodejs-2.svg"
+                altText="NodeJS logo"
                 priority={true}
               />
               <ImageListItem
@@ -183,22 +180,22 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <h1 className="text-center text-xl font-bold lg:text-2xl  py-5 mb-10">
-            I also have a B.Sc in Computer Science, as well as a TOPIK (Korean
+          <h1 className="text-center text-xl font-bold lg:text-2xl lg:mb-20">
+            I have a B.Sc in Computer Science, as well as a TOPIK (Korean
             Proficiency) level 5.
           </h1>
         </div>
       </section>
       <NextSection text="Final page I promise." scrollRef={socialRef} />
 
-      <hr className="divide-solid outline-8 my-10"></hr>
+      <hr className="divide-solid outline-8 lg:my-10"></hr>
 
       <section
         id="callToAction"
         ref={socialRef}
         className="relative lg:h-screen mt-10 w-3/4 mx-auto"
       >
-        <div className="grid grid-cols-1 grid-rows-3 lg:grid-cols-4 lg:grid-rows-1 place-items-center gap-10 lg:gap-0 lg:h-2/5">
+        <div className="grid grid-cols-1 grid-rows-3 lg:grid-cols-4 lg:grid-rows-1 place-items-center gap-5 lg:gap-0 lg:h-2/5">
           <div className="my-5 lg:col-start-1 lg:col-end-3">
             <h1 className="text-center text-left text-2xl font-bold lg:text-3xl">
               I am currently open for work.
