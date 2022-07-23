@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Head from "next/head";
 import ProjectItem from "../components/ProjectItem";
+import Image from "next/image";
 
 export default function Projects() {
   const gexDesc = [
@@ -13,7 +14,7 @@ export default function Projects() {
   const portDesc = [
     "This project was created using Next js with Tailwind css.",
     "The purpose was to display information about myself, my projects and parse my blogs using a markdown parser.",
-    "I hoped to achieve this using next's dynamic routing, static generation and various build in components to make the website faster.",
+    "I hoped to achieve this using next's dynamic routing, static generation and various built in components to make the website faster.",
   ];
 
   const gexImages = [
@@ -34,13 +35,20 @@ export default function Projects() {
       </Head>
       <Header />
       
-      <div className="">
+      <div className="m-auto grid place-items-center">
         <h1 className="mt-10 text-center text-4xl font-bold  lg:text-4xl">
           My Projects
         </h1>
+        {/* <Image
+          src="/images/project.png"
+          width={100}
+          height={100}
+          alt="blog icon"
+          priority={true}
+        ></Image> */}
       </div>
       <div className="flex flex-col place-items-center gap-0">
-        <div className="flex flex-row w-3/4">
+        <div className="flex flex-row w-3/4 lg:w-2/5">
           <ProjectItem
             imageList={gexImages}
             title="Runescape 3 Grand Exchange Search"
@@ -49,7 +57,7 @@ export default function Projects() {
           />
         </div>
 
-        <div className="flex flex-row w-3/4">
+        <div className="flex flex-row w-3/4 lg:w-2/5">
           <ProjectItem
             imageList={portfolioImages}
             title="My custom Portfolio Website"

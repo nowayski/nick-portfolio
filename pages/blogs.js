@@ -24,7 +24,7 @@ export default function Blogs({ allPostsData }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <section className="m-auto text-left p-10 my-5 text-lg grid place-items-center">
+      <section className="m-auto text-left my-5 my-20 text-lg grid place-items-center w-4/5">
         <Image
           src="/images/blog.png"
           width={100}

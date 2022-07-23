@@ -12,6 +12,11 @@ export default function Home() {
   const skillRef = useRef(null);
   const aboutMeRef = useRef(null);
   const socialRef = useRef(null);
+  const startRef = useRef(null);
+
+  function backToTopHandler() {
+    startRef.current.scrollIntoView({ behavior: "smooth" });
+  }
 
   return (
     <div>
@@ -24,7 +29,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section className="h-max lg:h-full">
+      <section ref={startRef} className="h-max lg:h-full">
         <Header />
         <IntroSection />
       </section>
@@ -259,6 +264,14 @@ export default function Home() {
               </a>
             </Link>
           </div>
+        </div>
+        <div className="grid place-items-center">
+          <button
+            onClick={backToTopHandler}
+            className="px-5 py-5 text-2xl font-bold bg-amber-300 w-500 h-500 mt-20 mb-10 lg:mb-1 rounded-full hover:bg-black hover:text-white"
+          >
+            Back to Top
+          </button>
         </div>
       </section>
 
