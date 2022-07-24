@@ -105,22 +105,22 @@ export default function Header() {
         }
       >
         <Link href="/">
-          <a className="block text-lg font-bold py-2 border-t-2 border-amber-200 ">
+          <a className="block text-lg font-bold py-1 border-t-2 border-zinc-200 ">
             Home
           </a>
         </Link>
         <Link href="/projects">
-          <a className="block text-lg font-bold py-2 border-t-2 border-amber-200">
+          <a className="block text-lg font-bold py-2 border-t-2 border-zinc-200">
             Projects
           </a>
         </Link>
         <Link href="/blogs">
-          <a className=" block text-lg font-bold py-2 border-t-2 border-amber-200">
+          <a className=" block text-lg font-bold py-2 border-t-2 border-ambzincer-200">
             Blogs
           </a>
         </Link>
         <Link href="/contactme">
-          <a className=" block text-lg font-bold py-2 border-t-2 border-b-2 border-amber-200">
+          <a className=" block text-lg font-bold py-2 border-t-2 border-b-2 border-zinc-200">
             Contact Me
           </a>
         </Link>
