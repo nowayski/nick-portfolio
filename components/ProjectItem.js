@@ -12,7 +12,7 @@ export default function ProjectItem(props) {
     setExpanded(!expanded);
   }
   return (
-    <div className="transition ease-in-out grid grid-cols-1 my-10 place-items-center m-auto bg-slate-100 shadow-xl rounded-lg">
+    <div className="grid grid-cols-1 w-3/4 my-10 place-items-center m-auto bg-slate-100 shadow-xl rounded-lg">
       <div>
         <Link href={props.linkURL}>
           <a>
@@ -33,23 +33,21 @@ export default function ProjectItem(props) {
           Information
         </button>
       </div>
-      <div
-        className={
-          expanded
-            ? "transition ease-in-out scale-y-110 duration-300 w-3/4 h-full"
-            : "transition ease-in-out scale-y-0 duration-300 h-0 w-3/4"
-        }
-      >
+      <div className={expanded ? "w-3/4 h-full" : "h-0 w-3/4"}>
         <div className="list-disc">
           {" "}
-          {description?.map((desc, index) => (
-            <p
-              className="text-left text-md text-md font-bold text-zinc-800 my-5"
-              key={index}
-            >
-              {desc}
-            </p>
-          ))}
+          {expanded ? (
+            description?.map((desc, index) => (
+              <p
+                className="text-left text-md text-md font-bold text-zinc-800 my-5"
+                key={index}
+              >
+                {desc}
+              </p>
+            ))
+          ) : (
+            <p></p>
+          )}
         </div>
       </div>
     </div>

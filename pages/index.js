@@ -99,7 +99,8 @@ export default function Home() {
 
             <br />
             <p className="pt-5 lg:my-10 text-lg font-bold">
-              But most importantly, I am easy to work with and care about building high quality websites.
+              But most importantly, I am easy to work with and care about
+              building high quality websites.
             </p>
           </div>
         </div>
@@ -112,8 +113,8 @@ export default function Home() {
         <h1 className="text-center text-left text-2xl font-bold lg:text-3xl mb-5">
           I specialise in frontend web development.
         </h1>
-        <div className="bg-zinc-100 mb-20 h-1/3 lg:h-1/4 rounded-lg lg:rounded-full">
-          <div className="flex flex-wrap place-items-center text-center lg:grid lg:gap-1 lg:grid-cols-5 lg:grid-rows-1 mb-2 py-12 lg:py-2">
+        <div className="bg-zinc-100 mb-20 pt-2 h-1/3 lg:h-1/4 rounded-lg lg:rounded-full">
+          <div className="flex flex-wrap place-items-center text-center lg:grid lg:gap-1 lg:grid-cols-5 lg:grid-rows-1 my-2 py-12 lg:py-2">
             <ImageListItem
               title="HTML"
               source="/images/html.png"
@@ -150,7 +151,7 @@ export default function Home() {
           <h1 className="text-center text-left text-2xl font-bold lg:text-3xl mb-2">
             My other experience.
           </h1>
-          <div className="bg-zinc-100 mb-10 h-1/3 lg:h-1/4 rounded-lg lg:rounded-full">
+          <div className="bg-zinc-100 mb-10 pt-2 h-1/3 lg:h-1/4 rounded-lg lg:rounded-full">
             <div className="flex flex-wrap place-items-center text-center lg:grid lg:gap-5 lg:grid-cols-4 lg:grid-rows-1 mb-5 p-6 lg:py-2">
               <ImageListItem
                 title="Tailwind CSS"

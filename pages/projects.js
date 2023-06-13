@@ -34,7 +34,7 @@ export default function Projects() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      
+
       <div className="m-auto grid place-items-center">
         <h1 className="mt-10 text-center text-4xl font-bold  lg:text-4xl">
           My Projects
