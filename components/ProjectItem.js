@@ -12,7 +12,7 @@ export default function ProjectItem(props) {
     setExpanded(!expanded);
   }
   return (
-    <div className="grid grid-cols-1 w-3/4 my-10 place-items-center m-auto bg-slate-100 shadow-xl rounded-lg">
+    <div className="grid grid-cols-1 w-3/4 my-10 px-7 place-items-center m-auto bg-slate-100 shadow-xl rounded-lg">
       <div>
         <Link href={props.linkURL}>
           <a>
