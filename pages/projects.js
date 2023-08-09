@@ -52,7 +52,7 @@ export default function Projects() {
           <ProjectItem
             imageList={gexImages}
             title="Runescape 3 Grand Exchange Search"
-            linkURL="https://gex-search.herokuapp.com/"
+            linkURL="https://rs-gex.vercel.app/"
             description={gexDesc}
           />
         </div>
